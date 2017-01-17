@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de Veículos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <base href="/">
+    <link rel="shortcut icon" href="/imgs/favicon.png">
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.min.css">    
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- endbuild -->    
+</head>
+<body ng-app="Main">
+    <div class="modal__container">        
+        <div id="spinner-content" us-spinner spinner-key="spinner-content"></div>
+        <div ui-view="conteudo" class="modal-body modal__body container"></div>
+        <div class="modal__footer"></div>
+    </div>
+
+    <!-- build:js js/scripts.min.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/spin.js/spin.js"></script>
+    <script src="/bower_components/angular-spinner/angular-spinner.js"></script>
+    <script src="/bower_components/angular-input-masks/angular-input-masks-standalone.js"></script>
+    <script src="/bower_components/ngLocale/angular-locale_pt-br.js"></script>
+    <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>    
+    <script src="/node_modules/angular-format-masks/dist/format-masks.component.js"></script>
+
+    <script src="/app.module.js"></script>
+    <script src="/app.config.js"></script>
+    <script src="/app.router.js"></script>
+
+    <script src="/services/carrinho.service.js"></script>
+    <script src="/services/configuration.service.js"></script>
+    <script src="/services/mobile.service.js"></script>
+    <script src="/services/parametros.service.js"></script>
+    <script src="/services/planos.service.js"></script>
+    <script src="/services/storage.service.js"></script>
+
+    <script src="/vehicles/controllers/index.controller.js"></script>    
+    <!-- endbuild -->
+</body>
+</html>
