@@ -6,17 +6,29 @@ angular
 
 appRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-function appRouter($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+function appRouter($stateProvider, $urlRouterProvider) {    
 
     $stateProvider        
-        .state('vehicles', {
-            url: '/veiculos',
+        .state('main', {
+            url: '',
+            abstract: true,
+            views: {              
+              'header': {
+                   templateUrl: 'views/header.html'
+              },
+              'footer': {
+                   templateUrl: 'views/footer.html'
+              }
+            }
+        })
+        .state('main.home' , {
+            url: '/',
             views: {
-                'conteudo': {
-                    controller: 'indexController as index',
-                    templateUrl: '/vehicles/views/index.template.html'
+                'content@': {
+                    templateUrl: 'views/home.html'
                 }
             }
         });
+
+    $urlRouterProvider.otherwise('/');
 };
