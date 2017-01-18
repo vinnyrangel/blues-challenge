@@ -14,9 +14,14 @@
 </head>
 <body ng-app="Main">
     <div class="modal__container">        
-        <div id="spinner-content" us-spinner spinner-key="spinner-content"></div>
-        <div ui-view="conteudo" class="modal-body modal__body container"></div>
-        <div class="modal__footer"></div>
+        <div id="spinner-content" us-spinner spinner-key="spinner-content"></div>        
+        
+        <div ui-view="header"></div>    
+        <div class="container">          
+            <div ui-view="content"></div>
+        </div>
+        <div ui-view="footer"></div>
+        
     </div>
 
     <!-- build:js js/scripts.min.js -->
@@ -36,18 +41,23 @@
     <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>    
     <script src="/node_modules/angular-format-masks/dist/format-masks.component.js"></script>
 
+    <!--VEHICLE MODULE-->
+    <script src="/vehicles/vehicles.module.js"></script>
+    <script src="/vehicles/controllers/index.controller.js"></script>
+    <script src="/vehicles/services/vehicles.service.js"></script>
+
     <script src="/app.module.js"></script>
     <script src="/app.config.js"></script>
     <script src="/app.router.js"></script>
 
-    <script src="/services/carrinho.service.js"></script>
+    <!--script src="/services/carrinho.service.js"></script>
     <script src="/services/configuration.service.js"></script>
     <script src="/services/mobile.service.js"></script>
     <script src="/services/parametros.service.js"></script>
-    <script src="/services/planos.service.js"></script>
+    <script src="/services/planos.service.js"></script-->
     <script src="/services/storage.service.js"></script>
 
-    <script src="/vehicles/controllers/index.controller.js"></script>    
+
     <!-- endbuild -->
 </body>
 </html>
