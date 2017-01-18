@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('Main')
+        .module('vehicles')
         .controller('indexController', indexController);
 
-    indexController.$inject = ['carrinhoService', 'storageService', 'usSpinnerService'];
+    indexController.$inject = ['storageService', 'usSpinnerService'];
 
-    function indexController(carrinhoService, storageService, usSpinnerService) {
+    function indexController(storageService, usSpinnerService) {
         var vm = this;
         
     };
