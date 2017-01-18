@@ -10,5 +10,6 @@ angular
         'ui.router',
         'angular-carousel', 
         'ui.utils.masks', 
-        'angularSpinner'        
+        'angularSpinner',
+        'vehicles'
     ]);
