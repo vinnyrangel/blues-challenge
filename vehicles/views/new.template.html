@@ -3,28 +3,28 @@
         <div class="row form-group">
             <div class="col-md-6">
                 <label for="marca">Marca</label>
-                <input type="text" class="form-control" id="marca" placeholder="Digite a marca do veículo">                
+                <input type="text" class="form-control" id="marca" ng-model="adicionar.veiculo.marca" placeholder="Digite a marca do veículo">                
             </div>
             <div class="col-md-6">
                 <label for="modelo">Modelo</label>
-                <input type="text" class="form-control" id="modelo" placeholder="Digite o modelo do veículo">
+                <input type="text" class="form-control" id="modelo" ng-model="adicionar.veiculo.modelo" placeholder="Digite o modelo do veículo">
             </div>    
         </div>
         
         <div class="row form-group">
             <div class="col-md-4">
                 <label for="placa">Placa</label>
-                <input type="text" class="form-control" id="placa" placeholder="XXX-9999">
+                <input type="text" class="form-control" id="placa" ng-model="adicionar.veiculo.placa" placeholder="XXX-9999">
             </div>
             <div class="col-md-4">
                 <label for="combustivel">Combustível</label>
-                <input type="text" class="form-control" id="combustivel" placeholder="Digite o tipo de combustível'">
+                <input type="text" class="form-control" id="combustivel" ng-model="adicionar.veiculo.combustivel" placeholder="Digite o tipo de combustível'">
             </div>    
             <div class="col-md-4">
                 <label for="valor">Valor</label>
                 <div class="input-group">
                     <div class="input-group-addon">R$</div>
-                    <input type="text" class="form-control" id="valor" placeholder="00,00">
+                    <input type="text" class="form-control" id="valor" ng-model="adicionar.veiculo.valor" placeholder="00,00">
                 </div>                
             </div>    
         </div>
@@ -32,11 +32,11 @@
         <div class="row form-group">
             <div class="col-md-12">
                 <label for="foto">Foto</label>
-                <input type="text" class="form-control" id="foto" placeholder="Digite aqui a URL da imagem">
+                <input type="text" class="form-control" id="foto" ng-model="adicionar.veiculo.foto" placeholder="Digite aqui a URL da imagem">
             </div>
         </div>
 
         <button type="button" class="btn btn-default" ng-click="adicionar.voltar()">Voltar</button>
-        <button type="submit" class="btn btn-default">Adicionar</button>
+        <button type="submit" class="btn btn-default" ng-click="adicionar.novoVeiculo(adicionar.veiculo)">Adicionar</button>
     </form>
 </section>
