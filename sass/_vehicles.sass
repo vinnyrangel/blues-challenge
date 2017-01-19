@@ -1,0 +1,62 @@
+.vehicles 
+
+    &__search
+        width: 220px
+        height: 40px
+        float: right
+        margin: 0 0 20px
+    
+    &__new
+        width: 140px
+        height: 40px
+        float: left
+        margin: 0 0 20px
+        &__btn-add
+            height: 100%
+            width: 100%;
+    
+    &__list
+        background: $branco
+        border: 1px solid $cor-padrao-borda
+        color: $cor-padrao-texto
+        &__heading
+            background: #F8FAFC
+            tr > th
+                height: 40px
+                border-bottom: none !important
+        &__content
+            & > tr
+                cursor: pointer;
+                & > td
+                    height: 50px
+                    line-height: 34px !important
+                &:hover
+                    background-color: $azul-medio !important
+                    & > td
+                        border-top: 1px solid $azul-escuro
+                        border-bottom: 1px solid $azul-escuro
+                        &:first-child
+                            border-left: 1px solid $azul-escuro
+                        &:last-child
+                            border-right: 1px solid $azul-escuro
+    
+    &__pagination
+        text-align: center
+        .pagination
+            height: 40px
+            background-color: #fff
+            & > li
+                height: 100%
+                &:first-child, 
+                &:last-child
+                    font-weight: bold
+                    font-size: 20px                    
+            li > a
+                height: 100%
+                padding: 0 15px
+                line-height: 40px
+                &.active
+                    background-color: $azul-medio                        
+                    border: 1px solid $azul-escuro
+                &:hover
+                    background-color: $amarelo-claro
