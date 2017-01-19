@@ -32,4 +32,6 @@ function appRouter($stateProvider, $urlRouterProvider) {
                 }
             }
         });
+    
+    $urlRouterProvider.otherwise('/veiculos/listar');
 };
