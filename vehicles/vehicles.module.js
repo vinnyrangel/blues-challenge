@@ -18,8 +18,17 @@ function appRouter($stateProvider, $urlRouterProvider) {
             url: '/listar',            
             views: {
                 'content@': {
-                    controller: 'indexController as index',
-                    templateUrl: 'vehicles/views/index.template.html'
+                    controller: 'listController as listar',
+                    templateUrl: 'vehicles/views/list.template.html'
+                }
+            }
+        })
+        .state('main.vehicles.new', {
+            url: '/novo',            
+            views: {
+                'content@': {
+                    controller: 'newController as adicionar',
+                    templateUrl: 'vehicles/views/new.template.html'
                 }
             }
         });
