@@ -16,9 +16,9 @@
             {value: "placa", label: "Placa"},
             {value: "modelo", label: "Modelo"},
             {value: "marca", label: "Marca"},
+            {value: "foto", label: "Foto"},
             {value: "combustivel", label: "Combustivel"},
-            {value: "valor", label: "Valor"},
-            {value: "foto", label: "Foto"}
+            {value: "valor", label: "Valor"}
         ];
 
         // Métodos
