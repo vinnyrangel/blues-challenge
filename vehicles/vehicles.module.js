@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('vehicles', ['ngStorage', 'angularSpinner'])
+    .module('vehicles', ['ngStorage', 'angularSpinner', 'gridAzul.component', 'paginacao.component'])
     .config(appRouter);
 
 appRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
