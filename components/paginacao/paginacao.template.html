@@ -6,7 +6,9 @@
         </a>
         </li>
 
-        <li ng-repeat="i in [] | range: paginacao.totalPaginas"><a href="#" ng-click="paginacao.selecionarPagina($index + 1)" ng-class="{'active': paginacao.paginaAtual == $index + 1}">{{ $index + 1 }}</a></li>
+        <li ng-repeat="i in [] | range: paginacao.totalPaginas">
+            <a href="#" ng-click="paginacao.selecionarPagina($index + 1)" ng-class="{'active': paginacao.paginaAtual == $index + 1}">{{ $index + 1 }}</a>
+        </li>
         
         <li>
         <a href="#" aria-label="Next">

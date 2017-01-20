@@ -23,6 +23,15 @@ function appRouter($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('main.vehicles.edit', {
+            url: '/editar/:placa',            
+            views: {
+                'content@': {
+                    controller: 'editController as editar',
+                    templateUrl: 'vehicles/views/edit.template.html'
+                }
+            }
+        })
         .state('main.vehicles.new', {
             url: '/novo',            
             views: {

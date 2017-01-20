@@ -8,8 +8,8 @@
             controller: paginacaoController,
             controllerAs: 'paginacao',
             bindings: {
-                itensPorPagina: '<',
-                carregarPagina: '&'
+                itensPorPagina : '<',
+                carregarPagina : '&'
             },
             require: {
                 parent:'^gridAzul'
@@ -37,7 +37,6 @@
         }
 
         function selecionarPagina(numero) {
-            console.log("trocar na paginação");
             vm.carregarPagina({
                 $event: {
                     pagina: numero

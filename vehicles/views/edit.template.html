@@ -1,0 +1,42 @@
+<section class="vehicles">
+    <form class="container">
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" ng-model="editar.veiculo.marca" placeholder="Digite a marca do veículo">                
+            </div>
+            <div class="col-sm-6">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" ng-model="editar.veiculo.modelo" placeholder="Digite o modelo do veículo">
+            </div>    
+        </div>
+        
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label for="placa">Placa</label>
+                <input type="text" class="form-control" id="placa" ng-model="editar.veiculo.placa" placeholder="XXX-9999" disabled>
+            </div>
+            <div class="col-sm-4">
+                <label for="combustivel">Combustível</label>
+                <input type="text" class="form-control" id="combustivel" ng-model="editar.veiculo.combustivel" placeholder="Digite o tipo de combustível'">
+            </div>    
+            <div class="col-sm-4">
+                <label for="valor">Valor</label>
+                <div class="input-group">
+                    <div class="input-group-addon">R$</div>
+                    <input type="text" class="form-control" id="valor" ng-model="editar.veiculo.valor" placeholder="00,00">
+                </div>                
+            </div>    
+        </div>
+
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label for="foto">Foto</label>
+                <input type="text" class="form-control" id="foto" ng-model="editar.veiculo.foto" placeholder="Digite aqui a URL da imagem">
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-default" ng-click="editar.voltar()">Voltar</button>
+        <button type="submit" class="btn btn-default" ng-click="editar.editarVeiculo(editar.veiculo)">Alterar</button>
+    </form>
+</section>

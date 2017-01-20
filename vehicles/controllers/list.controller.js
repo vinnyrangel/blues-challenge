@@ -22,8 +22,9 @@
         ];
 
         // Métodos
-        vm.addNewVehicle = addNewVehicle;
+        vm.addNewVehicle  = addNewVehicle;
         vm.removeVehicles = removeVehicles;
+        vm.editVehicles   = editVehicles;
 
         /////////////////
 
@@ -36,6 +37,10 @@
             vehiclesService.remove(selected_vehicles, function(){
                 vm.veiculos = vehiclesService.vehicles;
             });
+        }
+
+        function editVehicles(event) {                        
+            $state.go('main.vehicles.edit', {placa: event.selecionado.placa});
         }
         
     };

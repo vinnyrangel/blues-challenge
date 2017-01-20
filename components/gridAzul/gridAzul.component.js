@@ -1,10 +1,5 @@
 (function() {
-'use strict';
-
-    // Usage:
-    // 
-    // Creates:
-    // 
+'use strict';    
 
     angular
         .module('gridAzul.component',[])
@@ -13,10 +8,11 @@
             controller: gridAzulController,
             controllerAs: 'grid',
             bindings: {
-                dados: '<',
-                colunas: '<',
-                itensPorPagina: '@',
-                remover: '&'
+                dados          : '<',
+                colunas        : '<',
+                itensPorPagina : '@',
+                editar         : '&',
+                remover        : '&'
             }
         });
 
@@ -26,22 +22,23 @@
         var vm = this;
 
         // Propriedades
-        vm.paginaAtual = 1;        
-        vm.dadosPagina = []; // controla quais dados serão exibidos na página atual
+        vm.paginaAtual  = 1;        
+        vm.dadosPagina  = []; // controla quais dados serão exibidos na página atual
         vm.selecionados = [];
 
         // Métodos
         vm.carregarPagina = carregarPagina;
         vm.selecionarItem = selecionarItem;
         vm.removerItens   = removerItens;
+        vm.editarItem     = editarItem;
         
         ////////////////
 
         function carregarPagina(event) {
             // calculo onde iniciam os registros da próxima página
             var inicio = (parseInt(event.pagina)-1) * vm.itensPorPagina;            
-            
-            var auxDados = angular.copy(vm.dados);
+            console.log(vm.dados);
+            var auxDados   = angular.copy(vm.dados);
             vm.dadosPagina = auxDados.splice(inicio, vm.itensPorPagina); 
             vm.paginaAtual = event.pagina;
         }
@@ -55,6 +52,14 @@
                     return selecionado !== item
                 })
             }
+        }
+
+        function editarItem(item) {                 
+            vm.editar({
+                $event: {
+                    selecionado: item
+                }
+            })
         }
         
         function removerItens() {            

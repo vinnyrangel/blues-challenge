@@ -34,7 +34,8 @@
         this.selected = [];
 
         // Métodos
-        this.add = add;
+        this.add    = add;
+        this.edit   = edit;
         this.remove = remove;
 
         ////////////////
@@ -43,6 +44,13 @@
             this.vehicles.push(vehicle);
         }
         
+        function edit(selected_vehicle) {
+            this.vehicles.forEach(function(veiculo) {
+                if (veiculo.placa == selected_vehicle.placa) {                    
+                    veiculo = selected_vehicle;
+                }
+            })
+        }
 
         function remove(selected_vehicles, callback) {                        
             this.vehicles = this.vehicles.filter(function(vehicle) {                                
