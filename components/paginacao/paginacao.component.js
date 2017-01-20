@@ -25,9 +25,20 @@
     function paginacaoController() {
         var vm = this;        
         
+        // Propriedades
+        vm.totalPaginas = 1;
+
+        // Métodos
         vm.selecionarPagina = selecionarPagina;
 
         ////////////////
+
+        function calculaTotalPaginas() {
+            console.log("Entrei");
+            var totalItens = vm.parent.dados.length;
+            vm.totalPaginas = Math.ceil(totalItens/vm.itensPorPagina);
+            console.log(vm.totalPaginas, "Cabei");
+        }
 
         function selecionarPagina(numero) {
             console.log("trocar na paginação");
@@ -40,7 +51,7 @@
 
         vm.$onInit = function() {
             vm.paginaAtual = vm.parent.paginaAtual;
-            
+            calculaTotalPaginas();
         }
     }
 })();
