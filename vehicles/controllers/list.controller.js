@@ -22,7 +22,7 @@
         ];
         vm.pagina = ($stateParams.adicionado) ? 0 : 1;
 
-        console.log($stateParams.adicionado, "$stateParams.adicionado");
+        //console.log($stateParams.adicionado, "$stateParams.adicionado");
 
         // Métodos
         vm.addNewVehicle  = addNewVehicle;

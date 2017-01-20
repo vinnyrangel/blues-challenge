@@ -1,7 +1,7 @@
 <section class="vehicles">   
 
     <div class="input-group vehicles__search">
-        <input type="text" class="form-control" placeholder="Pesquisar" ng-model="list.search" />
+        <input type="text" class="form-control" placeholder="Pesquisar" ng-model="listar.search" />
         <span class="input-group-addon" id="search"><i class="glyphicon glyphicon-search"></i></span>
     </div>
     
@@ -9,6 +9,6 @@
         <button type="button" class="btn btn-default vehicles__new__btn-add" ng-click="listar.addNewVehicle()">Novo Carro</button>
     </div> 
     
-    <grid-azul dados="listar.veiculos" colunas="listar.gridColunas" itens-por-pagina="3" editar="listar.editVehicles($event)" remover="listar.removeVehicles($event)"></grid-azul>
+    <grid-azul dados="listar.veiculos" buscar="listar.search" colunas="listar.gridColunas" itens-por-pagina="3" editar="listar.editVehicles($event)" remover="listar.removeVehicles($event)"></grid-azul>
     
 </section>

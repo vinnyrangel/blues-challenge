@@ -10,6 +10,7 @@
             bindings: {
                 dados          : '<',
                 colunas        : '<',
+                buscar         : '<',
                 itensPorPagina : '@',
                 editar         : '&',
                 remover        : '&'
@@ -30,7 +31,7 @@
         vm.carregarPagina = carregarPagina;
         vm.selecionarItem = selecionarItem;
         vm.removerItens   = removerItens;
-        vm.editarItem     = editarItem;
+        vm.editarItem     = editarItem;        
         
         ////////////////
 
@@ -74,12 +75,15 @@
             carregarPagina({pagina: 1});
         }
 
-        vm.$onChanges = function(changes) {
-            if(!changes.dados.isFirstChange()) {
+        vm.$onChanges = function(changes) {            
+            if(changes.dados && !changes.dados.isFirstChange()) {
                 vm.dados = changes.dados.currentValue;
                 carregarPagina({pagina: vm.paginaAtual});
             }
             
+            if(changes.buscar && !changes.buscar.isFirstChange()) {
+                vm.buscar = changes.buscar.currentValue;
+            }
         };
     }
 })();
