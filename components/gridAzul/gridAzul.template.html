@@ -1,0 +1,14 @@
+<table class="table table-hover vehicles__list">
+    <thead class="vehicles__list__heading">
+        <tr>
+            <th><input type="checkbox" /></th>
+            <th ng-repeat="coluna in grid.colunas">{{ coluna.label }}</th>            
+        </tr>
+    </thead>
+    <tbody class="vehicles__list__content">
+        <tr ng-repeat="item in grid.dados">
+            <td><input type="checkbox" /></td>
+            <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
+        </tr>
+    </tbody>
+</table>
