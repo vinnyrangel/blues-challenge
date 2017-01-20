@@ -7,10 +7,14 @@
     </thead>
     <tbody class="vehicles__list__content">
         <tr ng-repeat="item in grid.dadosPagina">
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" ng-model="item.selecionado" ng-click="grid.selecionarItem(item)" /></td>
             <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
         </tr>
     </tbody>
 </table>
+
+<div class="box_remove">
+    <p> <i class="glyphicon glyphicon-trash"></i> <a href="#">Excluir os itens selecionados</a></p>
+</div>
 
 <paginacao itens-por-pagina="grid.itensPorPagina" carregar-pagina="grid.carregarPagina($event)"></paginacao>

@@ -27,9 +27,11 @@
         // Propriedades
         vm.paginaAtual = 1;        
         vm.dadosPagina = []; // controla quais dados serão exibidos na página atual
+        vm.selecionados = [];
 
         // Métodos
         vm.carregarPagina = carregarPagina;
+        vm.selecionarItem = selecionarItem;
         
         ////////////////
 
@@ -45,6 +47,18 @@
             console.log(vm.dadosPagina, "vm.dadosPagina");
             vm.paginaAtual = event.pagina;
         }
+
+        
+        function selecionarItem (item) {                 
+            if (item.selecionado) {
+                vm.selecionados.push(item);
+            } else {
+                vm.selecionados = vm.selecionados.filter(function(selecionado) {
+                    return selecionado !== item
+                })
+            }
+        }
+        
 
         vm.$onInit = function() {
             console.log(vm.itensPorPagina, "itensPorPagina 1");
