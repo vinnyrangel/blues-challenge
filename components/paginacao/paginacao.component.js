@@ -1,11 +1,6 @@
 (function() {
 'use strict';
 
-    // Usage:
-    // 
-    // Creates:
-    // 
-
     angular
         .module('paginacao.component',[])
         .component('paginacao', {
@@ -27,6 +22,7 @@
         
         // Propriedades
         vm.totalPaginas = 1;
+        vm.paginaAtual  = 1;
 
         // Métodos
         vm.selecionarPagina = selecionarPagina;
@@ -34,10 +30,10 @@
         ////////////////
 
         function calculaTotalPaginas() {
-            console.log("Entrei");
+            // calculo o total de página contando os itens
+            // que estão no array de dados do controller-pai
             var totalItens = vm.parent.dados.length;
-            vm.totalPaginas = Math.ceil(totalItens/vm.itensPorPagina);
-            console.log(vm.totalPaginas, "Cabei");
+            vm.totalPaginas = Math.ceil(totalItens/vm.itensPorPagina);            
         }
 
         function selecionarPagina(numero) {
@@ -47,10 +43,10 @@
                     pagina: numero
                 }
             })
+            vm.paginaAtual = numero;            
         }
 
-        vm.$onInit = function() {
-            vm.paginaAtual = vm.parent.paginaAtual;
+        vm.$onInit = function() {            
             calculaTotalPaginas();
         }
     }
