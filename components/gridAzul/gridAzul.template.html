@@ -6,7 +6,7 @@
         </tr>
     </thead>
     <tbody class="vehicles__list__content">
-        <tr ng-repeat="item in grid.dados">
+        <tr ng-repeat="item in grid.dadosPagina">
             <td><input type="checkbox" /></td>
             <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
         </tr>
