@@ -14,20 +14,27 @@
             controllerAs: 'grid',
             bindings: {
                 dados: '<',
-                colunas: '<'
+                colunas: '<',
+                itensPorPagina: '@'
             },
         });
 
-    gridAzulController.inject = [];
+    gridAzulController.$inject = [];
     
     function gridAzulController() {
         var vm = this;
-                
-        console.log(vm.dados, "DADOS");
-        console.log(vm.colunas, "COLUNAS");
 
+        vm.paginaAtual = 1;        
+        vm.carregarPagina = carregarPagina;
+        
         ////////////////
 
-        
+        function carregarPagina(event) {
+            console.log("Hora de carregar a página" + event.pagina);
+        }
+
+        vm.$onInit = function() {
+            console.log(vm.itensPorPagina, "itensPorPagina 1");
+        }
     }
 })();
