@@ -1,20 +1,22 @@
-<table class="table table-hover vehicles__list">
-    <thead class="vehicles__list__heading">
-        <tr>
-            <th><input type="checkbox" /></th>
-            <th ng-repeat="coluna in grid.colunas">{{ coluna.label }}</th>            
-        </tr>
-    </thead>
-    <tbody class="vehicles__list__content">
-        <tr ng-repeat="item in grid.dadosPagina">
-            <td><input type="checkbox" ng-model="item.selecionado" ng-click="grid.selecionarItem(item)" /></td>
-            <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
-        </tr>
-    </tbody>
-</table>
+<div class="grid-azul">
+    <table class="table table-hover vehicles__list">
+        <thead class="vehicles__list__heading">
+            <tr>
+                <th><input type="checkbox" /></th>
+                <th ng-repeat="coluna in grid.colunas">{{ coluna.label }}</th>            
+            </tr>
+        </thead>
+        <tbody class="vehicles__list__content">
+            <tr ng-repeat="item in grid.dadosPagina track by $index">
+                <td><input type="checkbox" ng-model="item.selecionado" ng-click="grid.selecionarItem(item)" /></td>
+                <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
+            </tr>
+        </tbody>
+    </table>
 
-<div class="box_remove">
-    <p> <i class="glyphicon glyphicon-trash"></i> <a href="#">Excluir os itens selecionados</a></p>
+    <div class="grid-azul__remover">
+        <p ng-show="grid.selecionados.length > 0"> <i class="glyphicon glyphicon-trash"></i> <a href="#" ng-click="grid.removerItens()">Excluir os itens selecionados</a></p>
+    </div>
+
+    <paginacao itens-por-pagina="grid.itensPorPagina" carregar-pagina="grid.carregarPagina($event)"></paginacao>
 </div>
-
-<paginacao itens-por-pagina="grid.itensPorPagina" carregar-pagina="grid.carregarPagina($event)"></paginacao>

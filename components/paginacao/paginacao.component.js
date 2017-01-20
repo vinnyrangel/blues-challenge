@@ -16,8 +16,8 @@
             }
         });
 
-    paginacaoController.$inject = [];
-    function paginacaoController() {
+    paginacaoController.$inject = ['$rootScope'];
+    function paginacaoController($rootScope) {
         var vm = this;        
         
         // Propriedades
@@ -48,6 +48,6 @@
 
         vm.$onInit = function() {            
             calculaTotalPaginas();
-        }
+        }        
     }
 })();

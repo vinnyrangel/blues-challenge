@@ -15,13 +15,14 @@
             bindings: {
                 dados: '<',
                 colunas: '<',
-                itensPorPagina: '@'
-            },
+                itensPorPagina: '@',
+                remover: '&'
+            }
         });
 
-    gridAzulController.$inject = [];
+    gridAzulController.$inject = ['$scope'];
     
-    function gridAzulController() {
+    function gridAzulController($scope) {
         var vm = this;
 
         // Propriedades
@@ -32,19 +33,16 @@
         // Métodos
         vm.carregarPagina = carregarPagina;
         vm.selecionarItem = selecionarItem;
+        vm.removerItens   = removerItens;
         
         ////////////////
 
         function carregarPagina(event) {
-            console.log("Hora de carregar a página" + event.pagina);
-
             // calculo onde iniciam os registros da próxima página
-            var inicio = (parseInt(event.pagina)-1) * vm.itensPorPagina;
-            console.log(inicio, "inicio");
-
+            var inicio = (parseInt(event.pagina)-1) * vm.itensPorPagina;            
+            
             var auxDados = angular.copy(vm.dados);
             vm.dadosPagina = auxDados.splice(inicio, vm.itensPorPagina); 
-            console.log(vm.dadosPagina, "vm.dadosPagina");
             vm.paginaAtual = event.pagina;
         }
 
@@ -59,10 +57,24 @@
             }
         }
         
+        function removerItens() {            
+            vm.remover({
+                $event: {
+                    selecionados: vm.selecionados
+                }
+            })
+        }
 
         vm.$onInit = function() {
-            console.log(vm.itensPorPagina, "itensPorPagina 1");
             carregarPagina({pagina: 1});
         }
+
+        vm.$onChanges = function(changes) {
+            if(!changes.dados.isFirstChange()) {
+                vm.dados = changes.dados.currentValue;
+                carregarPagina({pagina: vm.paginaAtual});
+            }
+            
+        };
     }
 })();
