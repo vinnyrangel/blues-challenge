@@ -5,11 +5,9 @@
             <span aria-hidden="true">&laquo;</span>
         </a>
         </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#" ng-click="paginacao.selecionarPagina(3)">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
+
+        <li ng-repeat="i in [] | range: paginacao.totalPaginas"><a href="#" ng-click="paginacao.selecionarPagina($index + 1)">{{ $index + 1 }}</a></li>
+        
         <li>
         <a href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
