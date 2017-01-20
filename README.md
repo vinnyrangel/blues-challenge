@@ -1,9 +1,15 @@
 # Blues Challenge
 
-## Início
+## Instruções
 
-Aqui entrará a descrição completa do projeto quando ele estiver finalizado :)
+Para instalar as dependências, rode o comando:
 
 ```
-npm install -g bower && npm install -g gulp-cli
+npm install && bower install
+```
+
+Para executar o projeto:
+
+```
+gulp serve
 ```
