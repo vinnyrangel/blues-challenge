@@ -24,9 +24,19 @@
     paginacaoController.$inject = [];
     function paginacaoController() {
         var vm = this;        
-
         
+        vm.selecionarPagina = selecionarPagina;
+
         ////////////////
+
+        function selecionarPagina(numero) {
+            console.log("trocar na paginação");
+            vm.carregarPagina({
+                $event: {
+                    pagina: numero
+                }
+            })
+        }
 
         vm.$onInit = function() {
             vm.paginaAtual = vm.parent.paginaAtual;
