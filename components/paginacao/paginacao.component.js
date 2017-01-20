@@ -9,23 +9,28 @@
     angular
         .module('paginacao.component',[])
         .component('paginacao', {
-            // template:'htmlTemplate',
             templateUrl: '/components/paginacao/paginacao.template.html',
             controller: paginacaoController,
+            controllerAs: 'paginacao',
             bindings: {
-                Binding: '=',
+                itensPorPagina: '<',
+                carregarPagina: '&'
             },
+            require: {
+                parent:'^gridAzul'
+            }
         });
 
-    paginacaoController.inject = [];
+    paginacaoController.$inject = [];
     function paginacaoController() {
-        var vm = this;
-        
+        var vm = this;        
 
+        
         ////////////////
 
-        vm.onInit = function() { };
-        vm.onChanges = function(changesObj) { };
-        vm.onDestory = function() { };
+        vm.$onInit = function() {
+            vm.paginaAtual = vm.parent.paginaAtual;
+            
+        }
     }
 })();
