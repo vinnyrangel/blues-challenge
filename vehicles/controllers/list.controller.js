@@ -12,6 +12,14 @@
         
         // Propriedades
         vm.veiculos = vehiclesService.vehicles;
+        vm.gridColunas = [
+            {value: "placa", label: "Placa"},
+            {value: "modelo", label: "Modelo"},
+            {value: "marca", label: "Marca"},
+            {value: "combustivel", label: "Combustivel"},
+            {value: "valor", label: "Valor"},
+            {value: "foto", label: "Foto"}
+        ];
 
         // Métodos
         vm.addNewVehicle = addNewVehicle;
