@@ -32,7 +32,7 @@
 
         function novoVeiculo(veiculo) {
             vehiclesService.add(veiculo);
-            $state.go('main.vehicles.list');
+            $state.go('main.vehicles.list', {adicionado: true});
         }
         
     };
