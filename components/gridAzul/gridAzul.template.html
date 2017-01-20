@@ -9,7 +9,7 @@
         <tbody class="vehicles__list__content">
             <tr ng-repeat="item in veiculosFiltrados = (grid.dadosPagina | filter: grid.buscar) track by $index">
                 <td ng-click="grid.selecionarItem(item)"><input type="checkbox" ng-model="item.selecionado" /></td>
-                <td ng-click="grid.editarItem(item)" ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>
+                <td ng-click="grid.editarItem(item)" ng-repeat="coluna in grid.colunas"><span ng-bind-html=" (grid.fn[coluna.value]) ? grid.fn[coluna.value]( item[coluna.value] ) : item[coluna.value] "></span></td>
             </tr>
             <tr ng-if="veiculosFiltrados.length == 0">
                 <td colspan="{{grid.colunas.length + 1}}">Nenhum veículo encontrado</td>

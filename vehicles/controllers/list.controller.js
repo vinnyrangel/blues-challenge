@@ -16,7 +16,7 @@
             {value: "placa", label: "Placa"},
             {value: "modelo", label: "Modelo"},
             {value: "marca", label: "Marca"},
-            {value: "foto", label: "Foto"},
+            {value: "imagem", label: "Imagem", fn: exibeImagem},
             {value: "combustivel", label: "Combustivel"},
             {value: "valor", label: "Valor"}
         ];
@@ -44,6 +44,13 @@
 
         function editVehicles(event) {                        
             $state.go('main.vehicles.edit', {placa: event.selecionado.placa});
+        }
+
+        function exibeImagem(url) {
+            if (url)
+                return "<a href='"+url+"' target='_blank'>Imagem</a>";
+            else
+                return "Sem foto";
         }
         
     };

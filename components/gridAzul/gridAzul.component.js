@@ -26,12 +26,14 @@
         vm.paginaAtual  = 1;        
         vm.dadosPagina  = []; // controla quais dados serão exibidos na página atual
         vm.selecionados = [];
+        vm.fn           = [];
 
         // Métodos
-        vm.carregarPagina = carregarPagina;
-        vm.selecionarItem = selecionarItem;
-        vm.removerItens   = removerItens;
-        vm.editarItem     = editarItem;        
+        vm.carregarPagina  = carregarPagina;
+        vm.selecionarItem  = selecionarItem;
+        vm.removerItens    = removerItens;
+        vm.editarItem      = editarItem; 
+        vm.carregarFuncoes = carregarFuncoes;       
         
         ////////////////
 
@@ -71,7 +73,17 @@
             })
         }
 
+        function carregarFuncoes() {            
+            for (var i in vm.colunas) {                
+                var item = vm.colunas[i];
+                if (item.fn){
+                    vm.fn[item.value] = item.fn;
+                }
+            }            
+        }
+
         vm.$onInit = function() {
+            this.carregarFuncoes();
             carregarPagina({pagina: 1});
         }
 
