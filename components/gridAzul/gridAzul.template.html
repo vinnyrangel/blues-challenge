@@ -7,9 +7,9 @@
             </tr>
         </thead>
         <tbody class="vehicles__list__content">
-            <tr ng-repeat="item in grid.dadosPagina track by $index" ng-click="grid.editarItem(item)">
-                <td><input type="checkbox" ng-model="item.selecionado" ng-click="grid.selecionarItem(item)" /></td>
-                <td ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
+            <tr ng-repeat="item in grid.dadosPagina track by $index">
+                <td ng-click="grid.selecionarItem(item)"><input type="checkbox" ng-model="item.selecionado" /></td>
+                <td ng-click="grid.editarItem(item)" ng-repeat="coluna in grid.colunas">{{ item[coluna.value] }}</td>            
             </tr>
         </tbody>
     </table>
