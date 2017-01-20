@@ -5,9 +5,9 @@
         .module('vehicles')
         .controller('listController', listController);
 
-    listController.$inject = ['storageService', 'usSpinnerService', 'vehiclesService', '$state', '$scope'];
+    listController.$inject = ['storageService', 'usSpinnerService', 'vehiclesService', '$state', '$stateParams'];
 
-    function listController(storageService, usSpinnerService, vehiclesService, $state, $scope) {
+    function listController(storageService, usSpinnerService, vehiclesService, $state, $stateParams) {
         var vm = this;
         
         // Propriedades
@@ -20,6 +20,9 @@
             {value: "combustivel", label: "Combustivel"},
             {value: "valor", label: "Valor"}
         ];
+        vm.pagina = ($stateParams.adicionado) ? 0 : 1;
+
+        console.log($stateParams.adicionado, "$stateParams.adicionado");
 
         // Métodos
         vm.addNewVehicle  = addNewVehicle;
