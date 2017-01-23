@@ -18,7 +18,11 @@
             </div>
             <div class="col-sm-4">
                 <label for="combustivel">Combustível</label>
-                <input type="text" class="form-control" id="combustivel" ng-model="editar.veiculo.combustivel" placeholder="Digite o tipo de combustível'">
+                <select class="form-control" id="combustivel" ng-model="editar.veiculo.combustivel" placeholder="Digite o tipo de combustível">
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Alcool">Alcool</option>
+                    <option value="Flex">Flex</option>
+                </select>
             </div>    
             <div class="col-sm-4">
                 <label for="valor">Valor</label>

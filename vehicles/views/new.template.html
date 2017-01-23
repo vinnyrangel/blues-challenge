@@ -14,11 +14,16 @@
         <div class="row form-group">
             <div class="col-sm-4">
                 <label for="placa">Placa</label>
-                <input type="text" class="form-control" id="placa" ng-model="adicionar.veiculo.placa" placeholder="XXX-9999">
+                <input type="text" class="form-control" id="placa" ng-model="adicionar.veiculo.placa" placeholder="XXX-9999" required>
             </div>
             <div class="col-sm-4">
                 <label for="combustivel">Combustível</label>
-                <input type="text" class="form-control" id="combustivel" ng-model="adicionar.veiculo.combustivel" placeholder="Digite o tipo de combustível'">
+                <select class="form-control" id="combustivel" ng-model="adicionar.veiculo.combustivel" required>
+                    <option value="" disabled>Digite o tipo de combustível</option>
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Alcool">Alcool</option>
+                    <option value="Flex">Flex</option>
+                </select>
             </div>    
             <div class="col-sm-4">
                 <label for="valor">Valor</label>
