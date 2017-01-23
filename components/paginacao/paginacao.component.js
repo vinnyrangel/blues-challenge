@@ -15,7 +15,14 @@
                 parent:'^gridAzul'
             }
         });
-
+    
+    /**
+     * paginação
+     * 
+     * Este componente é responsável por paginar as informações que chegam do gridComponent.
+     * @param {string} itensPorPagina - Quantidade de itens exibidos por página no grid
+     * @param {function} carregarPagina - Método responsável por enviar ao gridAzul qual página deve ser renderizada
+     */
     paginacaoController.$inject = ['$rootScope'];
     function paginacaoController($rootScope) {
         var vm = this;        

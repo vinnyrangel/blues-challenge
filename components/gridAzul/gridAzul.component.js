@@ -19,6 +19,18 @@
 
     gridAzulController.$inject = ['$scope'];
     
+    /**
+     * gridAzul
+     * 
+     * Este componente é responsável por exibir as informações que chegam do controller,
+     * montando o grid de dados e renderizando o componente de paginação
+     * @param {array} dados - Array de objetos para renderizar no grid
+     * @param {array} colunas - Array de obetos representando as colunas que devem ser renderizadas.
+     * @param {object} buscar - Referência para o campo de busca no controller. Responsável pelo filtro no grid. 
+     * @param {string} itensPorPagina - Quantidade de itens exibidos por página no grid
+     * @param {function} editar - Método responsável por editar um item do grid
+     * @param {function} remover - Método responsável por remover um item do grid
+     */
     function gridAzulController($scope) {
         var vm = this;
 
