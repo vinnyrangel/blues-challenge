@@ -26,13 +26,15 @@
 
         // Métodos
         vm.selecionarPagina = selecionarPagina;
+        vm.avancarPagina    = avancarPagina;
+        vm.voltarPagina     = voltarPagina;
 
         ////////////////
 
         function calculaTotalPaginas() {
             // calculo o total de página contando os itens
             // que estão no array de dados do controller-pai
-            var totalItens = vm.parent.dados.length;
+            var totalItens  = vm.parent.dados.length;
             vm.totalPaginas = Math.ceil(totalItens/vm.itensPorPagina);            
         }
 
@@ -43,6 +45,20 @@
                 }
             })
             vm.paginaAtual = numero;            
+        }
+
+        function avancarPagina() {
+            if (vm.paginaAtual+1 <= vm.totalPaginas) {
+                vm.paginaAtual++;
+                vm.selecionarPagina(this.paginaAtual);
+            }
+        }
+
+        function voltarPagina() {
+            if (vm.paginaAtual-1 >= 1) {
+                vm.paginaAtual--;
+                vm.selecionarPagina(this.paginaAtual);
+            }
         }
 
         vm.$onInit = function() {            
