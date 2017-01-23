@@ -27,20 +27,21 @@
         vm.dadosPagina  = []; // controla quais dados serão exibidos na página atual
         vm.selecionados = [];
         vm.fn           = [];
+        vm.imagem       = false;
 
         // Métodos
         vm.carregarPagina  = carregarPagina;
         vm.selecionarItem  = selecionarItem;
         vm.removerItens    = removerItens;
         vm.editarItem      = editarItem; 
-        vm.carregarFuncoes = carregarFuncoes;       
+        vm.carregarFuncoes = carregarFuncoes;      
+        vm.abrirImagem     = abrirImagem; 
         
         ////////////////
 
         function carregarPagina(event) {
             // calculo onde iniciam os registros da próxima página
-            var inicio = (parseInt(event.pagina)-1) * vm.itensPorPagina;            
-            console.log(vm.dados);
+            var inicio     = (parseInt(event.pagina)-1) * vm.itensPorPagina;            
             var auxDados   = angular.copy(vm.dados);
             vm.dadosPagina = auxDados.splice(inicio, vm.itensPorPagina); 
             vm.paginaAtual = event.pagina;
@@ -80,6 +81,14 @@
                     vm.fn[item.value] = item.fn;
                 }
             }            
+        }
+
+        function abrirImagem(event, url) {
+            if (event)
+                event.stopPropagation();
+
+            if (url)
+                vm.imagem = url;
         }
 
         vm.$onInit = function() {

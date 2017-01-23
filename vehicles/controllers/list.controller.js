@@ -46,9 +46,9 @@
             $state.go('main.vehicles.edit', {placa: event.selecionado.placa});
         }
 
-        function exibeImagem(url) {
+        function exibeImagem(url) {            
             if (url)
-                return "<a href='"+url+"' target='_blank'>Imagem</a>";
+                return "<span class='fake_link'>Imagem</span>";
             else
                 return "Sem foto";
         }
